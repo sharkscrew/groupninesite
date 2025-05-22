@@ -29,3 +29,16 @@ def add_gender(request):
       return render(request,'gender/AddGender.html')
   except Exception as e:
     return HttpResponse(f'Error occurred during add gender: {e}')
+  
+def edit_gender(request, genderId):
+  try:
+    gender = Genders.objects.get(pk=genderId)
+
+    data = {
+      'gender' : gender 
+    }
+
+
+    return render(request, 'gender/EditGender.html')
+  except Exception as e:
+    return HttpResponse(f'Erorr occurred during edit gender : {e}')
