@@ -13,7 +13,6 @@ Gender list
         <table class="w-full  ">
             <thead class="text-xs text-white bg-blue-600">
                 <tr>
-                    <th class="px-6 py-3 ">Gender Id</th>
                     <th class="px-6 py-3 ">Gender</th>
                     <th class="px-6 py-3 ">Action</th>
                 </tr>
@@ -21,12 +20,11 @@ Gender list
             <tbody class="bg-white divide-y dark:bg-gray-800 dark:divide-gray-700">
             {% for gender in genders %}
             <tr class=" hover:bg-gray-100 border-b border-gray-200">
-                <td class= "px-10 py-3 text-center align-middle ">{{gender.gender_id}}</td>
                 <td class= "px-10 py-3 text-center align-middle ">{{gender.gender}}</td>
-                <td class= "px-10 py-3 text-center align-middle">
+                <td class= "px-10 py-3 text-center align-middle"> 
                     <div class="inline-flex shadow-sm">
                         <a href="/gender/edit/{{ gender.gender_id }}" class= "bg-green-600 px-3 py-2.5 font-medium text-white rounded-s-sm hover:bg-green-700 hover:outline-none">Edit</a>
-                        <a href="#" class= "bg-red-600 px-3 py-2.5 font-medium text-white rounded-e-sm hover:bg-red-700 hover:outline-none">Delete</a>
+                        <a href="/gender/delete/{{ gender.gender_id }}" class= "bg-red-600 px-3 py-2.5 font-medium text-white rounded-e-sm hover:bg-red-700 hover:outline-none">Delete</a>
                     </div>
                 </td>
             </tr>   
