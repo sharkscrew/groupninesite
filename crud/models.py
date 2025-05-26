@@ -10,6 +10,9 @@ class Genders(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.gender
+
 class Users(models.Model):
     class Meta:
         db_table = 'tbl_users'
