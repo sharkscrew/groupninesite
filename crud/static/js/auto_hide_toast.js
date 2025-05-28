@@ -7,4 +7,4 @@ setTimeout(() => {
    if (errorToastMessage) {
     errorToastMessage.style.display ='none'
    }
-}, 3000);
+}, 2000);

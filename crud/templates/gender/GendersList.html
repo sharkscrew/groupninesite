@@ -8,18 +8,18 @@ Gender list
 
 {% include "include/sidebar.html" %}
 
-<div class= "p-2 sm:ml-64 mt-16 md:mt-14">
-    <div class="relative overflow-x-auto">  
-        <table class="w-full  ">
-            <thead class="text-xs text-white bg-blue-600">
+<div class= " p-2 sm:ml-64 mt-16 md:mt-14 bg-gradient-to-b from-[#0b777f] to-[#7ea69a] ">
+    <div class="relative overflow-x-auto  ">  
+        <table class="w-full">
+            <thead class="text-xs text-black bg-gradient-to-b from-[#074c51] to-[#556f67] ">
                 <tr>
                     <th class="px-6 py-3 ">Gender</th>
                     <th class="px-6 py-3 ">Action</th>
                 </tr>
             </thead>
-            <tbody class="bg-white divide-y dark:bg-gray-800 dark:divide-gray-700">
+            <tbody class="bg-gradient-to-b from-[#0b777f6f] to-[#344540]">
             {% for gender in genders %}
-            <tr class=" hover:bg-gray-100 border-b border-gray-200">
+            <tr class=" hover:bg-cyan-900 border-b border-cyan-900">
                 <td class= "px-10 py-3 text-center align-middle ">{{gender.gender}}</td>
                 <td class= "px-10 py-3 text-center align-middle"> 
                     <div class="inline-flex shadow-sm">

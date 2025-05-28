@@ -1,0 +1,28 @@
+{% extends "layout/base.html" %}
+
+{% block 'title' %}Login{% endblock 'title' %}
+
+{% block 'content' %}
+<div class="flex items-center justify-center min-h-screen bg-gradient-to-b from-[#0b777f] to-[#7ea69a]">
+    <form method="post" action="/user/login" class="bg-gradient-to-b from-[#0fa4af] to-[#a2d5c6] p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h2 class="text-2xl font-bold mb-6 text-center text-balance">Login</h2>
+        {% csrf_token %}
+        <div id="loginError" class="hidden text-red-500 text-sm mb-4 text-center">Incorrect username or password</div>
+
+        <div class="mb-4">
+                <label for="username" class="block text-sm font-medium mb-2">Username</label>
+                <input type="text" name="username" id="username" required
+                class="w-full px-4 py-3 border border-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 text-black" />
+        </div>
+        <div class="mb-6">
+            <label for="password" class="block text-sm font-medium mb-2">Password</label>
+            <input type="password" name="password" id="password" required
+            class="w-full px-4 py-3 border border-sky-900 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 text-black" />
+        </div>
+        <button type="submit"
+                class="w-full bg-sky-400 text-black font-medium py-3 rounded-md hover:bg-sky-500 transition">
+            Login
+        </button>
+    </form>
+</div>
+{% endblock 'content' %}
