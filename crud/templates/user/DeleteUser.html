@@ -5,8 +5,8 @@
 {% include "include/sidebar.html" %}
 {% include "include/toastmessage.html" %}
 
-<div class= "p-2 sm:ml-64 mt-16 md:mt-14"style="background: linear-gradient(180deg, #a2d5c6 0%, #e0f7fa 100%); ">
-    <form action="/user/add" method="post">
+<div class= "p-2 sm:ml-64 mt-16 md:mt-14 bg-gradient-to-b from-[#7ea69a] to-[#0b777f]">
+    <form action="/user/delete/{{ user.user_id }}" method="post">
         {% csrf_token %}
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mx-auto linear-gradient(180deg, #a2d5c6 0%, #e0f7fa 100%); ">
             <div class= "col-span-2 md:col-span-1 ">
@@ -20,7 +20,7 @@
                 </div>
                 <div class="mb-4">
                     <label for="birthdate" class="block text-sm font-medium mb-2">Birth Date</label>
-                    <input type="date" class="bg-white px-3 py-2.5 border border-#0fa4af text-black block text-sm font-medium rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600" name="birthdate" id="birthdate" value="{{ user.birthdate }}" readonly/>
+                    <input type="date" class="bg-white px-3 py-2.5 border border-#0fa4af text-black block text-sm font-medium rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600" name="birthdate" id="birthdate" value="{{ user.birthdate|date:'Y-m-d' }}" readonly/>
                 </div>
                 <div class="mb-4">
                     <label for="address" class="block text-sm font-medium mb-2">Address</label>

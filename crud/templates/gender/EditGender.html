@@ -6,8 +6,8 @@
     {% include "include/sidebar.html" %}
     {% include "include/ToastMessage.html" %}
 
-    <div class="p-2 sm:ml-64 mt-16 md:mt-14 flex justify-center bg-gray-700">
-        <form action="/gender/edit/{{ gender.gender_id }}" method="post">
+    <div class="flex items-center justify-center min-h-screen bg-gradient-to-b from-[#0b777f] to-[#7ea69a]">
+        <form action="/gender/edit/{{ gender.gender_id }}" method="post" class="bg-gradient-to-b from-[#0fa4af] to-[#a2d5c6] p-8 rounded-lg shadow-lg w-full max-w-md">
             {% csrf_token %}
             <div class="mb-4">
                 <label for="gender" class="block text-sm font-medium mb-2">Gender</label>
@@ -19,4 +19,5 @@
             </div>
         </form>
     </div>
+
 {% endblock 'content' %}

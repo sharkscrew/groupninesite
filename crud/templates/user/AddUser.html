@@ -5,43 +5,43 @@
 {% include "include/sidebar.html" %}
 {% include "include/toastmessage.html" %}
 
-<div class= "p-2 sm:ml-64 mt-16 md:mt-14" "bg-gradient-to-b from-[#0b777f] to-[#7ea69a]">
+<div class= "p-2 sm:ml-64 mt-16 md:mt-14 bg-gradient-to-b from-[#7ea69a] to-[#0b777f]">
     <form action="/user/add" method="post">
         {% csrf_token %}
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mx-auto " "bg-gradient-to-b from-[#0b777f] to-[#7ea69a]">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mx-auto">
             <div class= "col-span-2 md:col-span-1">
                 <div class="mb-4">
-                    <label for="full_name" class="block text-sm font-medium mb-2">Full Name</label>
+                    <label for="full_name" class="block text-sm font-medium mb-2" required>Full Name</label>
                     <input type="text" class=" bg-white px-3 py-2.5 border border-#0fa4af text-black block text-sm font-medium rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600" name="full_name" id="full_name" />
                 </div>
                 <div class="mb-4">
                     <label for="full_name" class="block mb-2 text-sm font-medium text-black dark:text-white">Gender</label>
-                <select name="gender" id="gender" class="bg-white px-3 py-2.5 border border-#0fa4af text-black block text-sm font-medium rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600">
+                <select name="gender" id="gender" class="bg-white px-3 py-2.5 border border-#0fa4af text-black block text-sm font-medium rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600"required>
                 {% for gender in genders %}
                 <option value="{{ gender.gender_id }}">{{ gender.gender }}</option>
                 {% endfor %} </select>
                 </div>
                 <div class="mb-4">
                     <label for="birthdate" class="block text-sm font-medium mb-2">Birth Date</label>
-                    <input type="date" class="bg-white px-3 py-2.5 border border-#0fa4af text-black block text-sm font-medium rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600" name="birthdate" id="birthdate" />
+                    <input type="date" class="bg-white px-3 py-2.5 border border-#0fa4af text-black block text-sm font-medium rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600" name="birthdate" id="birthdate"required />
                 </div>
                 <div class="mb-4">
                     <label for="address" class="block text-sm font-medium mb-2">Address</label>
-                    <input type="text" class=" bg-white px-3 py-2.5 border border-#0fa4af text-black block text-sm font-medium rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600" name="address" id="address" />
+                    <input type="text" class=" bg-white px-3 py-2.5 border border-#0fa4af text-black block text-sm font-medium rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600" name="address" id="address" required/>
                 </div>
                 <div class="mb-4">
                     <label for="email" class="block text-sm font-medium mb-2">Email</label>
-                    <input type="text" class=" bg-white px-3 py-2.5 border border-#0fa4af text-black block text-sm font-medium rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600" name="email" id="email" />
+                    <input type="text" class=" bg-white px-3 py-2.5 border border-#0fa4af text-black block text-sm font-medium rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600" name="email" id="email" required/>
                 </div>
             </div>
             <div class="col-span-2 md:col-span-1"> 
                     <div class="mb-4">
                         <label for="contact_number" class="block text-sm font-medium mb-2">Contact Number</label>
-                        <input type="text" class=" bg-white px-3 py-2.5 border border-#0fa4af text-black block text-sm font-medium rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600" name="contact_number" id="contact_number" />
+                        <input type="text" class=" bg-white px-3 py-2.5 border border-#0fa4af text-black block text-sm font-medium rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600" name="contact_number" id="contact_number"required />
                     </div>
                 <div class="mb-4">
                     <label for="username" class="block text-sm font-medium mb-2"> Username</label>
-                    <input type="text" class=" bg-white px-3 py-2.5 border border-#0fa4af text-black block text-sm font-medium rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600" name="username" id="username" />
+                    <input type="text" class=" bg-white px-3 py-2.5 border border-#0fa4af text-black block text-sm font-medium rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600" name="username" id="username" required/>
                 </div>
                 {% if password_error %}
                 <div class="mb-2 p-2 rounded bg-red-100 text-red-700 text-sm">
@@ -50,20 +50,19 @@
                 {% endif %}         
                 <div class="mb-4">
                     <label for="password" class="block text-sm font-medium mb-2">Password</label>
-                    <input type="password" class=" bg-white px-3 py-2.5 border border-#0fa4af text-black block text-sm font-medium rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600" name="password" id="password" />
+                    <input type="password" class=" bg-white px-3 py-2.5 border border-#0fa4af text-black block text-sm font-medium rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600" name="password" id="password" required/>
                 </div>
                 <div class="mb-4">
                     <label for="confirm_password" class="block text-sm font-medium mb-2">Confirm Password</label>
-                    <input type="password" class=" bg-white px-3 py-2.5 border border-#0fa4af text-black block text-sm font-medium rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600" name="confirm_password" id="confirm_password" />
+                    <input type="password" class=" bg-white px-3 py-2.5 border border-#0fa4af text-black block text-sm font-medium rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600" name="confirm_password" id="confirm_password"required />
                 </div>
                 <div class="flex justify-end">
                     <button type="submit" class="bg-green-500 hover:bg-green-600 text-sm font-medium text-white rounded-sm px-6 py-2 focus:outline-none" >Submit User</button>    
                 </div>
             </div>
         </div>    
-    </form>                                                                                 
+    <form>  
 </div> 
-
 {% endblock 'content' %}
         
         

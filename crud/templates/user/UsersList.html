@@ -7,11 +7,19 @@ User list
 {% block 'content' %}
 
 {% include "include/sidebar.html" %}
+{% include "include/toastmessage.html" %}
 
-<div class= "p-2 sm:ml-64 mt-16 md:mt-14 bg-gradient-to-b from-[#0b777f] to-[#7ea69a] ">
-    <div class="relative overflow-x-auto ">  
+<div class= "p-2 sm:ml-64 mt-16 md:mt-14 bg-gradient-to-b from-[#7ea69a] to-[#0b777f]">    
+    <div class="relative overflow-x-auto ">
+    <form method="get" action="" class="mb-4">
+        <input type="text" name="search" placeholder="Search users" value="{{ search_query|default:'' }}"
+            class="bg-[#a2d5c6]  px-3 py-2 border border-gray-300 rounded-l text-black focus:outline-none w-64" />
+        <button type="submit"class=" text-black px-2 py-1 rounded-r">🔍</button>
+    </form>  
+    <div class="overflow-x-auto"> 
+        
         <table class="w-full  ">
-            <thead class="text-xs text-black bg-gradient-to-b from-[#074c51] to-[#556f67]">
+            <thead class="text-xs text-black bg-gradient-to-b from-[#074c51] to-[#556f67] ">
                 <tr>
                     <th class="px-6 py-3 ">Full name</th>
                     <th class="px-6 py-3 ">Gender</th>
@@ -22,9 +30,9 @@ User list
                     <th class="px-6 py-3 ">Action</th>
                 </tr>
             </thead>
-            <tbody class="bg-gradient-to-b from-[#0b777f6f] to-[#344540]">
+            <tbody class="text-xs text-black bg-gradient-to-b from-[#0b777f6f] to-[#344540]">
             {% for user in users %}
-            <tr class="hover:bg-cyan-900 border-b border-cyan-900">
+            <tr class="border-b border-cyan-900">
                 <td class= "px-10 py-3  ">{{ user.full_name }} </td>
                 <td class= "px-10 py-3  ">{{ user.gender.gender }} </td>
                 <td class= "px-10 py-3  ">{{ user.birthdate }} </td>
@@ -88,5 +96,6 @@ User list
         {% endif %}
         </ul>
     </nav>
+    </div>
 </div>   
 {% endblock 'content' %} 

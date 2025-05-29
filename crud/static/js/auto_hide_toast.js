@@ -1,6 +1,6 @@
 setTimeout(() => {
    const successToastMessage = document.getElementById('toast-success');
-   const errorToastMessage =document.getElementsById('toast-error');
+   const errorToastMessage =document.getElementById('toast-error');
    if (successToastMessage) {
        successToastMessage.style.display = 'none'
    }

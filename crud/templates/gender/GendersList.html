@@ -7,8 +7,9 @@ Gender list
 {% block 'content' %}
 
 {% include "include/sidebar.html" %}
+{% include "include/toastmessage.html" %}
 
-<div class= " p-2 sm:ml-64 mt-16 md:mt-14 bg-gradient-to-b from-[#0b777f] to-[#7ea69a] ">
+<div class= " p-2 sm:ml-64 mt-16 md:mt-14 bg-gradient-to-b from-[#7ea69a] to-[#0b777f] w h-full">
     <div class="relative overflow-x-auto  ">  
         <table class="w-full">
             <thead class="text-xs text-black bg-gradient-to-b from-[#074c51] to-[#556f67] ">
@@ -19,7 +20,7 @@ Gender list
             </thead>
             <tbody class="bg-gradient-to-b from-[#0b777f6f] to-[#344540]">
             {% for gender in genders %}
-            <tr class=" hover:bg-cyan-900 border-b border-cyan-900">
+            <tr class=" border-b border-cyan-900">
                 <td class= "px-10 py-3 text-center align-middle ">{{gender.gender}}</td>
                 <td class= "px-10 py-3 text-center align-middle"> 
                     <div class="inline-flex shadow-sm">

@@ -6,8 +6,8 @@
 {% include "include/sidebar.html" %}
 {% include "include/ToastMessage.html" %}
 
-<div class="p-2 sm:ml-64 mt-16 md:mt-14 flex justify-center  min-h-screen"  style="background: linear-gradient(90deg, #0fa4af 0%, #a2d5c6 100%); border-bottom: 2px solid #0fa4af;">
-    <form action="/gender/delete/{{ gender.gender_id }}" method="post">
+<div class="flex items-center justify-center min-h-screen bg-gradient-to-b from-[#0b777f] to-[#7ea69a]">
+    <form action="/gender/delete/{{ gender.gender_id }}" method="post" class="bg-gradient-to-b from-[#0fa4af] to-[#a2d5c6] p-8 rounded-lg shadow-lg w-full max-w-md">
         {% csrf_token %}
         <div class="mb-4">
                 <label for="gender" class="block text-sm font-medium mb-2">Gender</label>
@@ -17,6 +17,6 @@
                 <button type="submit" class="bg-red-600 mt-1 text-sm font-medium text-white px-3 py-2.5 rounded-sm shadow-sm cursor-pointer hover:bg-red-700 hover:outline-none">Delete Gender</button>
             </div>
         </div>
-    <form>                                                                               
+    </form> 
 </div>
 {% endblock 'content' %}
